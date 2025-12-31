@@ -18,11 +18,19 @@
         <main>
             <section class="card">
                 <h2 id="data-hoje">Carregando...</h2>
+                
                 <div class="clima-principal">
                     <span id="temp-hoje" class="temp-grande">--°</span>
-                    <p class="sensacao">Sensação: <span id="sensacao-hoje">--</span>°</p>
-                    <p id="desc-hoje">--</p>
+                    <p class="sensacao">Sensacao: <span id="sensacao-hoje">--</span>°</p>
+                    <p id="desc-hoje" style="text-transform: capitalize;">--</p>
                 </div>
+
+                <div class="previsao-horaria-container">
+                    <h3>Próximas Horas</h3>
+                    <div id="lista-horarios" class="scroll-horario">
+                        </div>
+                </div>
+
                 <div class="clima-detalhes">
                     <span>💧 <span id="chuva-hoje">--</span>%</span>
                     <span>💨 <span id="vento-hoje">--</span> km/h</span>
