@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praia na CBX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="parallax-bg"></div>
+    
+    <div class="content-wrapper">
+        <header>
+            <h1>Praia na CBX</h1>
+            <button id="btn-atualizar" onclick="buscarClima()">Atualizar Informações</button>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2 id="data-hoje">Carregando...</h2>
+                <div class="clima-principal">
+                    <span id="temp-hoje" class="temp-grande">--°</span>
+                    <p id="desc-hoje">--</p>
+                </div>
+                <div class="clima-detalhes">
+                    <span>💧 <span id="chuva-hoje">--</span>%</span>
+                    <span>💨 <span id="vento-hoje">--</span> km/h</span>
+                </div>
+            </section>
+
+            <section class="card mare-section">
+                <h3>Tábua de Marés - Salvador</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.tide-forecast.com/locations/Salvador-Brazil/tides/latest" 
+                            frameborder="0" scrolling="no" class="mare-iframe"></iframe>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="data-amanha">Amanhã</h2>
+                <div class="clima-detalhes">
+                    <span>🌡️ <span id="temp-amanha">--</span>°</span>
+                    <span>💧 <span id="chuva-amanha">--</span>%</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
