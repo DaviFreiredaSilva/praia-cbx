@@ -48,5 +48,7 @@ async function buscarClima() {
     }
 }
 
-// Iniciar ao carregar a página
-window.onload = buscarClima;
+// No final do script.js, use este ou o window.onload
+document.addEventListener('DOMContentLoaded', () => {
+    buscarClima();
+});
