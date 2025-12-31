@@ -10,6 +10,7 @@ async function buscarClima() {
         const hoje = data.list[0];
         document.getElementById('data-hoje').innerText = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric' });
         document.getElementById('temp-hoje').innerText = `${Math.round(hoje.main.temp)}°`;
+        document.getElementById('sensacao-hoje').innerText = Math.round(hoje.main.feels_like);
         document.getElementById('desc-hoje').innerText = hoje.weather[0].description;
         document.getElementById('chuva-hoje').innerText = Math.round(data.list[0].pop * 100);
         document.getElementById('vento-hoje').innerText = Math.round(hoje.wind.speed * 3.6); // Converte m/s para km/h
@@ -17,6 +18,7 @@ async function buscarClima() {
         // Dados de Amanhã (item daqui a 24h, aproximadamente índice 8 na lista)
         const amanha = data.list[8];
         document.getElementById('temp-amanha').innerText = `${Math.round(amanha.main.temp_min)} / ${Math.round(amanha.main.temp_max)}`;
+        document.getElementById('sensacao-amanha').innerText = Math.round(amanha.main.feels_like);
         document.getElementById('chuva-amanha').innerText = Math.round(amanha.pop * 100);
 
     } catch (error) {
