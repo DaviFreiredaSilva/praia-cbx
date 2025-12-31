@@ -69,6 +69,40 @@ button:active {
     font-weight: bold;
 }
 
+.previsao-horaria-container h3 {
+    font-size: 0.9rem;
+    margin: 15px 0 10px 0;
+    opacity: 0.8;
+}
+
+.scroll-horario {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Esconde barra no Firefox */
+}
+
+.scroll-horario::-webkit-scrollbar {
+    display: none; /* Esconde barra no Chrome/Safari */
+}
+
+.hora-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 12px;
+    min-width: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.hora-item span { font-size: 0.85rem; }
+.hora-item strong { font-size: 1.1rem; }
+.hora-item small { font-size: 0.7rem; color: #add8e6; }
+
 .sensacao {
     font-size: 1.2rem;
     color: #ffd180; /* Um tom de laranja suave */
