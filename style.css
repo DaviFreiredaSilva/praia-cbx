@@ -69,34 +69,52 @@ button:active {
     font-weight: bold;
 }
 
+.previsao-horaria-container {
+    width: 100%;
+    overflow: hidden; /* Garante que nada saia do card principal */
+    margin: 15px 0;
+}
+
+.scroll-horario {
+    display: flex;
+    flex-direction: row; /* Força os itens a ficarem um ao lado do outro */
+    flex-wrap: nowrap;   /* Impede que os itens pulem para a linha de baixo */
+    gap: 12px;
+    overflow-x: auto;    /* Ativa o scroll horizontal */
+    padding: 10px 5px;
+    width: 100%;
+    
+    /* Melhora o deslize no iPhone e Android */
+    -webkit-overflow-scrolling: touch; 
+    scroll-snap-type: x mandatory; 
+}
+
+.hora-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px);
+    padding: 10px;
+    border-radius: 12px;
+    
+    /* Importante para Mobile: */
+    min-width: 85px;    /* Garante que o card tenha um tamanho fixo e não suma */
+    flex-shrink: 0;     /* Impede que o flexbox "aperte" o card */
+    scroll-snap-align: start;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .previsao-horaria-container h3 {
     font-size: 0.9rem;
     margin: 15px 0 10px 0;
     opacity: 0.8;
 }
 
-.scroll-horario {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scrollbar-width: none; /* Esconde barra no Firefox */
-}
 
 .scroll-horario::-webkit-scrollbar {
     display: none; /* Esconde barra no Chrome/Safari */
-}
-
-.hora-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 12px;
-    min-width: 70px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
 }
 
 .hora-item span { font-size: 0.85rem; }
