@@ -172,3 +172,25 @@ button:active {
     display: block;
     margin-bottom: 10px;
 }
+
+.lotometro-container {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Cores dinâmicas */
+.vazia { background-color: #4caf50; color: white; }    /* Verde */
+.moderada { background-color: #ffc107; color: black; } /* Amarelo */
+.cheia { background-color: #f44336; color: white; }    /* Vermelho */
