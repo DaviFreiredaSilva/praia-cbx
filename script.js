@@ -48,7 +48,42 @@ async function buscarClima() {
     }
 }
 
+function calcularLotacao(temp, descClima) {
+    const agora = new Date();
+    const diaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
+    const hora = agora.getHours();
+    const statusElemento = document.getElementById('status-praia');
+    
+    let lotacao = "Vazia";
+    let classe = "vazia";
+
+    const ehFimDeSemana = (diaSemana === 0 || diaSemana === 6);
+    const ehSegunda = (diaSemana === 1); // Regra da folga do comércio
+    const horarioPico = (hora >= 10 && hora <= 16);
+    const climaBom = !descClima.includes("chuva") && !descClima.includes("tempestade") && temp > 25;
+
+    // Regra para Finais de Semana (Sol + Horário de Pico)
+    if (ehFimDeSemana && horarioPico && climaBom) {
+        lotacao = "Muito Cheia";
+        classe = "cheia";
+    } 
+    // NOVA REGRA: Segunda-feira de Sol na CBX
+    else if (ehSegunda && horarioPico && climaBom) {
+        lotacao = "Movimentada (Folga)";
+        classe = "moderada"; // Ou 'cheia' se você achar que fica realmente lotado
+    }
+    // Regra para Final de Tarde ou FDS Nublado
+    else if (ehFimDeSemana || (horarioPico && climaBom) || (hora >= 17 && hora <= 19)) {
+        lotacao = "Moderada";
+        classe = "moderada";
+    }
+
+    statusElemento.innerText = lotacao;
+    statusElemento.className = "status-badge " + classe;
+}
+
 // No final do script.js, use este ou o window.onload
 document.addEventListener('DOMContentLoaded', () => {
     buscarClima();
 });
+
