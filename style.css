@@ -10,6 +10,18 @@ body {
     background-color: #000;
 }
 
+footer {
+    background: rgba(0, 0, 0, 0.75); /* Preto transparente */
+    backdrop-filter: blur(5px);      /* Efeito de desfoque sutil */
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7); /* Branco levemente transparente */
+    border-radius: 15px 15px 0 0;   /* Arredondado apenas em cima */
+}
+
 /* Efeito Parallax */
 .parallax-bg {
     position: fixed;
@@ -194,4 +206,5 @@ button:active {
 .vazia { background-color: #4caf50; color: white; }    /* Verde */
 .moderada { background-color: #ffc107; color: black; } /* Amarelo */
 .cheia { background-color: #f44336; color: white; }    /* Vermelho */
+
 
