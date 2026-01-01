@@ -37,6 +37,8 @@ async function buscarClima() {
             listaHorarios.innerHTML += htmlHora;
         });
 
+        calcularLotacao(temperaturaAtual, descricaoClima);
+        
         // --- DADOS DE AMANHÃ (Índice 8) ---
         const amanha = data.list[8];
         document.getElementById('temp-amanha').innerText = `${Math.round(amanha.main.temp)}°`;
@@ -86,4 +88,5 @@ function calcularLotacao(temp, descClima) {
 document.addEventListener('DOMContentLoaded', () => {
     buscarClima();
 });
+
 
