@@ -8,6 +8,8 @@ async function buscarClima() {
 
         // --- DADOS GERAIS DE HOJE ---
         const hoje = data.list[0];
+        const temperaturaAtual = Math.round(hoje.main.temp);
+        const descricaoClima = hoje.weather[0].description.toLowerCase();
         document.getElementById('data-hoje').innerText = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric' });
         document.getElementById('temp-hoje').innerText = `${Math.round(hoje.main.temp)}°`;
         document.getElementById('sensacao-hoje').innerText = Math.round(hoje.main.feels_like);
@@ -88,5 +90,6 @@ function calcularLotacao(temp, descClima) {
 document.addEventListener('DOMContentLoaded', () => {
     buscarClima();
 });
+
 
 
